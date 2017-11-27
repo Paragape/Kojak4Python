@@ -8,12 +8,15 @@ Created on February 10, 2017
 class KojakException(Exception):
     """
     This is the base exception for all exceptions that Kojak throws.
+
+    :param message: The message describing the exception.
     """
 
     def __init__(self, message: str):
         """
         Create a Kojak exception.
-        @param message: The message describing the exception.
+
+        :param message: The message describing the exception.
         """
 
         self._message = message
@@ -24,20 +27,23 @@ class KojakException(Exception):
 
 class AbortException(KojakException):
     """
-    Throw this exception when a catastrophic error occurs and the test should be terminated.
+    Throw this exception when a catastrophic error occurs and the test
+    should be terminated.
     """
     pass
 
 
 class HardException(KojakException):
     """
-    Throw this exception when an error occurs that is significant enough to abort the scenario.
+    Throw this exception when an error occurs that is significant enough
+    to abort the scenario.
     """
     pass
 
 
 class SoftException(KojakException):
     """
-    Throw this exception when a verification fails that is not significant enough to abort the scenario.
+    Throw this exception when a verification fails that is not significant
+    enough to abort the scenario.
     """
     pass
